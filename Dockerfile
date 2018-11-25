@@ -17,3 +17,5 @@ RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 RUN apt-get install -y npm
 
+RUN mkdir -p ~/.ssh
+
