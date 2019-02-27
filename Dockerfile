@@ -12,11 +12,12 @@ RUN cd curl-7.54.0 && ./configure --with-libssh2=/usr/local && make && make inst
 RUN ldconfig
 
 RUN apt-get update
-RUN env DEBIAN_FRONTEND=noninteractive apt-get install -yq php-cli php-mbstring php-xml
+RUN env DEBIAN_FRONTEND=noninteractive apt-get install -yq php-cli php-mbstring php-xml php-zip php-soap
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
 RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 RUN apt-get install -y npm
+RUN npm install --global cross-env
 
 RUN mkdir -p ~/.ssh
 
