@@ -11,7 +11,7 @@ RUN tar -xvjf curl-7.54.0.tar.bz2
 RUN cd curl-7.54.0 && ./configure --with-libssh2=/usr/local && make && make install
 RUN ldconfig
 
-RUN env DEBIAN_FRONTEND=noninteractive apt-get install -yq php-cli php-mbstring
+RUN env DEBIAN_FRONTEND=noninteractive apt-get install -yq php-cli php-mbstring php7.2-xml
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
 RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
